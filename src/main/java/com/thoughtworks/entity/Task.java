@@ -16,7 +16,7 @@ public class Task {
     @Column(name = "IS_COMPLETED", nullable = false)
     private boolean isCompleted;
 
-    @Column(name = "time_created", nullable = false)
+    @Column(name = "TIME_CREATED", nullable = false)
     private Date timeCreated;
 
     public Long getId() {
