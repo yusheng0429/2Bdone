@@ -16,7 +16,7 @@ flyway:
   encoding: UTF-8
 
 server:
-  port: 8002
+  port: 8088
   address: localhost
 
 ---
