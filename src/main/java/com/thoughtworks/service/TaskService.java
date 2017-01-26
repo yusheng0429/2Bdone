@@ -21,4 +21,12 @@ public class TaskService {
     public List<Task> getTasks(boolean isCompleted) {
         return Lists.newArrayList(taskRepository.findByStatus(isCompleted));
     }
+
+    public Task addTask(String name) {
+        Task task = new Task();
+        task.setName(name);
+        task.setIsCompleted(false);
+        taskRepository.save(task);
+        return task;
+    }
 }

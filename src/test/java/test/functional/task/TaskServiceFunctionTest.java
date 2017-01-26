@@ -104,4 +104,15 @@ public class TaskServiceFunctionTest {
             assertThat(task.getIsCompleted()).isTrue();
         }
     }
+
+    @Test
+    public void should_addTask_return_a_created_task() {
+        //given
+        String name = "Go to gym";
+        //when
+        Task task = taskSevice.addTask(name);
+        //then
+        assertThat(task.getId()).isEqualTo(defaultTasks.size() + 1);
+        assertThat(task.getIsCompleted()).isFalse();
+    }
 }
