@@ -43,7 +43,7 @@ public class TaskServiceFunctionTest {
         saveDefaultTask(task);
 
         task = new Task();
-        task.setName("Read a book");
+        task.setName("Read the book");
         task.setIsCompleted(false);
         saveDefaultTask(task);
 
@@ -61,5 +61,14 @@ public class TaskServiceFunctionTest {
     private void saveDefaultTask(Task task) {
         taskRepository.save(task);
         defaultTasks.add(task);
+    }
+
+    @Test
+    public void should_getAllTasks_return_tasks() {
+        //given
+        //when
+        List<Task> tasks = taskSevice.getAllTasks();
+        //then
+        assertThat(tasks).isEqualTo(defaultTasks);
     }
 }

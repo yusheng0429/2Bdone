@@ -56,31 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="init_test_db.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resources/init_test_db.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Application.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/Application.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="18" column="12" lean-forward="false" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Task.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/entity/Task.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="32" lean-forward="false" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
               <folding />
             </state>
           </provider>
@@ -131,10 +111,33 @@
       <file leaf-file-name="TaskServiceFunctionTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+            <state relative-caret-position="526">
+              <caret line="70" column="14" lean-forward="false" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractIntegerAssert.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/2.5.0/2083e85c9ee939e06d616bf4ab238ec24f2c828/assertj-core-2.5.0-sources.jar!/org/assertj/core/api/AbstractIntegerAssert.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="65" column="19" lean-forward="true" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Comparables.java" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/2.5.0/2083e85c9ee939e06d616bf4ab238ec24f2c828/assertj-core-2.5.0-sources.jar!/org/assertj/core/internal/Comparables.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="111" column="31" lean-forward="false" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="31" />
+              <folding>
+                <element signature="e#3440#3441#0" expanded="true" />
+                <element signature="e#3502#3503#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1022,7 +1025,14 @@
       <option name="project" value="LOCAL" />
       <updated>1485401393191</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Create a function initializeTasks with annotation @Before in class test.functional.task.TaskServiceFunctionalTest">
+      <created>1485402881611</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1485402881611</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1085,7 +1095,8 @@
     <MESSAGE value="Create a test class TaskServiceFunctionTest in package test.functional.task" />
     <MESSAGE value="Create a class TaskEndpoint in package com.thoughtworks.task.endpoint" />
     <MESSAGE value="Create a interface TaskRepository inherited from interface CrudRepository&lt;Task, Long&gt; in package com.thoughtwork.common.jpa" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create a interface TaskRepository inherited from interface CrudRepository&lt;Task, Long&gt; in package com.thoughtwork.common.jpa" />
+    <MESSAGE value="Create a function initializeTasks with annotation @Before in class test.functional.task.TaskServiceFunctionalTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create a function initializeTasks with annotation @Before in class test.functional.task.TaskServiceFunctionalTest" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1096,22 +1107,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/ToBdoneApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/init_test_db.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/Application.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1498,10 +1493,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/2.5.0/2083e85c9ee939e06d616bf4ab238ec24f2c828/assertj-core-2.5.0-sources.jar!/org/assertj/core/api/AbstractIntegerAssert.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="65" column="19" lean-forward="true" selection-start-line="65" selection-start-column="19" selection-end-line="65" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.assertj/assertj-core/2.5.0/2083e85c9ee939e06d616bf4ab238ec24f2c828/assertj-core-2.5.0-sources.jar!/org/assertj/core/internal/Comparables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="111" column="31" lean-forward="false" selection-start-line="111" selection-start-column="26" selection-end-line="111" selection-end-column="31" />
+          <folding>
+            <element signature="e#3440#3441#0" expanded="true" />
+            <element signature="e#3502#3503#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="63" column="5" lean-forward="false" selection-start-line="63" selection-start-column="5" selection-end-line="63" selection-end-column="5" />
+        <state relative-caret-position="526">
+          <caret line="70" column="14" lean-forward="false" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
