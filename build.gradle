@@ -26,6 +26,7 @@ targetCompatibility = 1.8
 
 ext.libraries = [
         flyway_core: dependencies.create('org.flywaydb:flyway-core:4.0.3'),
+        assertj_core: dependencies.create('org.assertj:assertj-core:3.0.0')
 ]
 
 dependencies {
@@ -34,7 +35,9 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
     compile "org.springframework:spring-test"
     compile("mysql:mysql-connector-java")
+
     compile libraries.flyway_core
+    compile libraries.assertj_core
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile("com.h2database:h2")

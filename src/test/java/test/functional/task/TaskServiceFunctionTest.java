@@ -27,7 +27,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ActiveProfiles({EnvProfile.TEST})
 @SpringBootTest(classes = ToBdoneApplication.class)
 public class TaskServiceFunctionTest {
-    List<Task> defaultTasks = new ArrayList<Task>();
+    List<Task> defaultTasks = null;
 
     @Autowired
     private TaskService taskSevice;
@@ -35,8 +35,15 @@ public class TaskServiceFunctionTest {
     @Autowired
     private TaskRepository taskRepository;
 
+    private int defaultActiveTaskCount;
+    private int defaultCompletedTaskCount;
+
     @Before
     public void initializeTasks() {
+        defaultTasks = new ArrayList<Task>();
+        defaultActiveTaskCount = 0;
+        defaultCompletedTaskCount = 0;
+
         Task task = new Task();
         task.setName("Have breakfast");
         task.setIsCompleted(true);
@@ -61,6 +68,11 @@ public class TaskServiceFunctionTest {
     private void saveDefaultTask(Task task) {
         taskRepository.save(task);
         defaultTasks.add(task);
+        if (task.getIsCompleted()) {
+            defaultCompletedTaskCount++;
+        } else {
+            defaultActiveTaskCount++;
+        }
     }
 
     @Test
@@ -70,5 +82,18 @@ public class TaskServiceFunctionTest {
         List<Task> tasks = taskSevice.getAllTasks();
         //then
         assertThat(tasks).isEqualTo(defaultTasks);
+    }
+    
+    @Test
+    public void should_getTasks_return_active_tasks_when_given_false() {
+        //given
+        boolean isCompleted = false;
+        //when
+        List<Task> tasks = taskSevice.getTasks(isCompleted);
+        //then
+        assertThat(tasks.size()).isEqualTo(defaultActiveTaskCount);
+        for (Task task : tasks) {
+            assertThat(task.getIsCompleted()).isFalse();
+        }
     }
 }
