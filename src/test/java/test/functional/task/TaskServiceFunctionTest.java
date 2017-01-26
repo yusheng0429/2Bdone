@@ -16,6 +16,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -26,17 +27,16 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ActiveProfiles({EnvProfile.TEST})
 @SpringBootTest(classes = ToBdoneApplication.class)
 public class TaskServiceFunctionTest {
+    List<Task> defaultTasks = new ArrayList<Task>();
+
     @Autowired
     private TaskService taskSevice;
 
     @Autowired
     private TaskRepository taskRepository;
 
-    @Autowired
-    private List<Task> defaultTasks;
-
     @Before
-    private void initializeTasks() {
+    public void initializeTasks() {
         Task task = new Task();
         task.setName("Have breakfast");
         task.setIsCompleted(true);

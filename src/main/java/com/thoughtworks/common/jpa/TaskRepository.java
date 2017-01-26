@@ -1,7 +1,9 @@
 package com.thoughtworks.common.jpa;
 
 import com.thoughtworks.entity.Task;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface TaskRepository extends CrudRepository<Task, String> {
+import java.util.List;
+
+public interface TaskRepository extends PagingAndSortingRepository<Task, String> {
 }
