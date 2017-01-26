@@ -17,4 +17,8 @@ public class TaskService {
     public List<Task> getAllTasks() {
         return Lists.newArrayList(taskRepository.findAll(new Sort(Sort.Direction.ASC, "id")));
     }
+
+    public List<Task> getTasks(boolean isCompleted) {
+        return Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+    }
 }

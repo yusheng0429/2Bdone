@@ -27,7 +27,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ActiveProfiles({EnvProfile.TEST})
 @SpringBootTest(classes = ToBdoneApplication.class)
 public class TaskServiceFunctionTest {
-    List<Task> defaultTasks = null;
+    List<Task> defaultTasks = new ArrayList<Task>();
+    private int defaultActiveTaskCount = 0;
+    private int defaultCompletedTaskCount = 0;
 
     @Autowired
     private TaskService taskSevice;
@@ -35,15 +37,8 @@ public class TaskServiceFunctionTest {
     @Autowired
     private TaskRepository taskRepository;
 
-    private int defaultActiveTaskCount;
-    private int defaultCompletedTaskCount;
-
     @Before
-    public void initializeTasks() {
-        defaultTasks = new ArrayList<Task>();
-        defaultActiveTaskCount = 0;
-        defaultCompletedTaskCount = 0;
-
+    public void setUp() {
         Task task = new Task();
         task.setName("Have breakfast");
         task.setIsCompleted(true);

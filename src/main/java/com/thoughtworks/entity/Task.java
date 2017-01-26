@@ -14,7 +14,7 @@ public class Task {
     private String name;
 
     @Column(name = "IS_COMPLETED", nullable = false)
-    private boolean isCompleted;
+    private boolean status;
 
     @Column(name = "TIME_CREATED", nullable = false)
     private Date timeCreated;
@@ -32,11 +32,11 @@ public class Task {
     }
 
     public boolean getIsCompleted() {
-        return this.isCompleted;
+        return this.status;
     }
 
     public void setIsCompleted(boolean isCompleted) {
-        this.isCompleted = isCompleted;
+        this.status = isCompleted;
     }
 
     public Date getTimeCreated() {
