@@ -5,6 +5,7 @@ import com.thoughtworks.common.constant.EnvProfile;
 import com.thoughtworks.common.jpa.TaskRepository;
 import com.thoughtworks.entity.Task;
 import com.thoughtworks.service.TaskService;
+import javassist.NotFoundException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -114,5 +115,14 @@ public class TaskServiceFunctionTest {
         //then
         assertThat(task.getId()).isEqualTo(defaultTasks.size() + 1);
         assertThat(task.getIsCompleted()).isFalse();
+    }
+    
+    public void should_deleteTask_return_false_when_given_nonexisting_id() {
+        //given
+        Long id = 0L;
+        //when
+        boolean result = taskSevice.deleteTask(id);
+        //then
+        assertThat(result).isFalse();
     }
 }
