@@ -1,5 +1,7 @@
 package com.thoughtworks.entity;
 
+import org.springframework.data.annotation.CreatedDate;
+
 import javax.persistence.*;
 import java.util.Date;
 
@@ -7,7 +9,7 @@ import java.util.Date;
 @Table(name = "TASK")
 public class Task {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "NAME", nullable = false, length = 256)
@@ -16,8 +18,9 @@ public class Task {
     @Column(name = "IS_COMPLETED", nullable = false)
     private boolean status;
 
-    @Column(name = "TIME_CREATED", nullable = false)
-    private Date timeCreated;
+    @CreatedDate
+    @Column(name = "TIME_CREATED", updatable = false, insertable = true)
+    private Date timeCreated = new Date();
 
     public Long getId() {
         return this.id;
