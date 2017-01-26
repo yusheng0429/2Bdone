@@ -91,4 +91,17 @@ public class TaskServiceFunctionTest {
             assertThat(task.getIsCompleted()).isFalse();
         }
     }
+
+    @Test
+    public void should_getTasks_return_completed_tasks_when_given_true() {
+        //given
+        boolean isCompleted = true;
+        //when
+        List<Task> tasks = taskSevice.getTasks(isCompleted);
+        //then
+        assertThat(tasks.size()).isEqualTo(defaultCompletedTaskCount);
+        for (Task task : tasks) {
+            assertThat(task.getIsCompleted()).isTrue();
+        }
+    }
 }
