@@ -141,4 +141,13 @@ public class TaskServiceFunctionTest {
         assertThat(tasks.size()).isEqualTo(defaultTasks.size() - 1);
         assertThat(tasks.contains(task)).isFalse();
     }
+    
+    @Test(expected = NotFoundException.class)
+    public void should_changeTaskStatus_throw_exception_when_given_nonexisting_id() {
+        //given
+        Long id = 0L;
+        //when
+        Task task = taskSevice.changeTaskStatus(id, true);
+        //then
+    }
 }
