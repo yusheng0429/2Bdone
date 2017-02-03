@@ -6,12 +6,14 @@ import com.thoughtworks.common.jpa.TaskRepository;
 import com.thoughtworks.entity.Task;
 import com.thoughtworks.service.TaskService;
 import javassist.NotFoundException;
+import org.assertj.core.util.Lists;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -124,5 +126,19 @@ public class TaskServiceFunctionTest {
         boolean result = taskSevice.deleteTask(id);
         //then
         assertThat(result).isFalse();
+    }
+
+    @Test
+    public void should_deleteTask_return_true_when_given_existing_id() {
+        //given
+        Long id = 1L;
+        Task task = defaultTasks.get(id.intValue());
+        //when
+        boolean result = taskSevice.deleteTask(id);
+        List tasks = Lists.newArrayList(taskRepository.findAll());
+        //then
+        assertThat(result).isTrue();
+        assertThat(tasks.size()).isEqualTo(defaultTasks.size() - 1);
+        assertThat(tasks.contains(task)).isFalse();
     }
 }
