@@ -29,4 +29,12 @@ public class TaskService {
         taskRepository.save(task);
         return task;
     }
+
+    public boolean deleteTask(Long id) {
+        boolean result = false;
+        Task task = taskRepository.findById(id);
+        if (task != null) {
+        }
+        return result;
+    }
 }
