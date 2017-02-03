@@ -2,6 +2,7 @@ package com.thoughtworks.service;
 
 import com.thoughtworks.common.jpa.TaskRepository;
 import com.thoughtworks.entity.Task;
+import javassist.NotFoundException;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
