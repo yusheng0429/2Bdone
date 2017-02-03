@@ -34,6 +34,8 @@ public class TaskService {
         boolean result = false;
         Task task = taskRepository.findById(id);
         if (task != null) {
+            taskRepository.delete(id);
+            result = true;
         }
         return result;
     }

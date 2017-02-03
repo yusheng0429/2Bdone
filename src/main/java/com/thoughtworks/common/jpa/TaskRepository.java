@@ -5,7 +5,7 @@ import org.springframework.data.repository.PagingAndSortingRepository;
 
 import java.util.List;
 
-public interface TaskRepository extends PagingAndSortingRepository<Task, String> {
+public interface TaskRepository extends PagingAndSortingRepository<Task, Long> {
     List<Task> findByStatus(boolean isCompleted);
     Task findById(Long id);
 }

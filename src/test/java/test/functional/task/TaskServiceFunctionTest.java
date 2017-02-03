@@ -131,8 +131,8 @@ public class TaskServiceFunctionTest {
     @Test
     public void should_deleteTask_return_true_when_given_existing_id() {
         //given
-        Long id = 1L;
-        Task task = defaultTasks.get(id.intValue());
+        Task task = defaultTasks.get(0);
+        Long id = task.getId();
         //when
         boolean result = taskSevice.deleteTask(id);
         List tasks = Lists.newArrayList(taskRepository.findAll());
