@@ -16,12 +16,12 @@ public class TaskEndpoint {
     @Autowired
     private TaskService taskService;
 
-    @RequestMapping(path = "/all", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List> getAllTasks() {
         return ResponseEntity.ok(taskService.getAllTasks());
     }
 
-    @RequestMapping(path = "/active/{isActive}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @RequestMapping(path = "/{isActive}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<List> getAllTasks(@PathVariable boolean isActive) {
         return ResponseEntity.ok(taskService.getTasks(!isActive));
     }
@@ -29,5 +29,14 @@ public class TaskEndpoint {
     @RequestMapping(path = "/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public ResponseEntity<Task> addTask(@RequestParam(value = "name", required = true) String name) {
         return ResponseEntity.ok(taskService.addTask(name));
+    }
+
+    @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<String> deleteTask(@PathVariable("id")Long id) {
+        if (taskService.deleteTask(id)) {
+            return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+        } else {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Task not found with id: " + id.toString());
+        }
     }
 }
