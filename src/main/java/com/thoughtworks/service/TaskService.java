@@ -45,6 +45,8 @@ public class TaskService {
         if (task == null) {
             throw new NotFoundException(getTaskIdNotFoundErrorMessage(id));
         }
+        task.setIsCompleted(isCompleted);
+        taskRepository.save(task);
         return task;
     }
 
