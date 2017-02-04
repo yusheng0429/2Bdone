@@ -161,6 +161,25 @@ public class TaskServiceFunctionTest {
             assertThat(ex.getMessage()).isEqualTo(getTaskIdNotFoundErrorMessage(id));
         }
     }
+    
+    @Test
+    public void should_changeTaskStatus_return_completed_task() {
+        //given
+        Task task = defaultTasks.get(1);
+        Long id = task.getId();
+        boolean isCompleted = true;
+        //when
+        try {
+            task = taskSevice.changeTaskStatus(id, isCompleted);
+        } catch (Exception ex) {
+            assert(false);
+        }
+        List tasks = Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+        //then
+        assertThat(task.getIsCompleted()).isTrue();
+        assertThat(tasks.contains(task)).isTrue();
+        assertThat(tasks.size()).isEqualTo(defaultCompletedTaskCount + 1);
+    }
 
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
