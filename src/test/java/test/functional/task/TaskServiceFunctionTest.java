@@ -127,7 +127,7 @@ public class TaskServiceFunctionTest {
         } catch (Exception ex) {
             //then
             assertThat(ex.getClass()).isEqualTo(NotFoundException.class);
-            assertThat(ex.getMessage()).isEqualTo("Task not found with id: " + id);
+            assertThat(ex.getMessage()).isEqualTo(getTaskIdNotFoundErrorMessage(id));
         }
     }
 
@@ -148,12 +148,21 @@ public class TaskServiceFunctionTest {
         assertThat(tasks.contains(task)).isFalse();
     }
     
-    @Test(expected = NotFoundException.class)
+    @Test
     public void should_changeTaskStatus_throw_exception_when_given_nonexisting_id() {
         //given
         Long id = 0L;
         //when
-        Task task = taskSevice.changeTaskStatus(id, true);
-        //then
+        try {
+            Task task = taskSevice.changeTaskStatus(id, true);
+        } catch (Exception ex) {
+            //then
+            assertThat(ex.getClass()).isEqualTo(NotFoundException.class);
+            assertThat(ex.getMessage()).isEqualTo(getTaskIdNotFoundErrorMessage(id));
+        }
+    }
+
+    private String getTaskIdNotFoundErrorMessage(Long id) {
+        return "Task not found with id: " + id;
     }
 }

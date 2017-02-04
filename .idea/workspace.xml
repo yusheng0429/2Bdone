@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="afd8b384-3a91-4698-806d-230d7b432a12" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/NotFoundException.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_swagger_swagger_annotations_1_5_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_swagger_swagger_core_1_5_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_swagger_swagger_jaxrs_1_5_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_swagger_swagger_jersey2_jaxrs_1_5_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__io_swagger_swagger_models_1_5_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_reflections_reflections_0_9_10.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/handler/BaseResponseException.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/handler/ErrorCode.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/handler/NotFoundException.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/2Bdone_main.iml" afterPath="$PROJECT_DIR$/.idea/modules/2Bdone_main.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules/2Bdone_test.iml" afterPath="$PROJECT_DIR$/.idea/modules/2Bdone_test.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/endpoint/TaskEndpoint.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/endpoint/TaskEndpoint.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/service/TaskService.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/service/TaskService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" afterPath="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
     </list>
@@ -87,21 +72,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="195">
               <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#604#605#0" expanded="false" />
-                <element signature="e#634#635#0" expanded="false" />
-                <element signature="e#665#666#0" expanded="false" />
-                <element signature="e#697#698#0" expanded="false" />
-                <element signature="e#737#738#0" expanded="false" />
-                <element signature="e#769#770#0" expanded="false" />
-                <element signature="e#808#809#0" expanded="false" />
-                <element signature="e#842#843#0" expanded="false" />
-                <element signature="e#897#898#0" expanded="false" />
-                <element signature="e#938#939#0" expanded="false" />
-                <element signature="e#974#975#0" expanded="false" />
-                <element signature="e#1013#1014#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,8 +80,8 @@
       <file leaf-file-name="TaskService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/service/TaskService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="451">
-              <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+            <state relative-caret-position="346">
+              <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,7 +92,7 @@
       <file leaf-file-name="NotFoundException.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/NotFoundException.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
+            <state relative-caret-position="60">
               <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -135,17 +106,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="315">
               <caret line="44" column="13" lean-forward="false" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#4059#0" expanded="false" />
-                <element signature="e#1247#1248#0" expanded="false" />
-                <element signature="e#1270#1271#0" expanded="false" />
-                <element signature="e#1663#1664#0" expanded="false" />
-                <element signature="e#1693#1694#0" expanded="false" />
-                <element signature="e#2406#2407#0" expanded="false" />
-                <element signature="e#2443#2444#0" expanded="false" />
-                <element signature="e#3173#3174#0" expanded="false" />
-                <element signature="e#3201#3202#0" expanded="false" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -153,8 +114,8 @@
       <file leaf-file-name="TaskServiceFunctionTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="142" column="19" lean-forward="false" selection-start-line="142" selection-start-column="19" selection-end-line="142" selection-end-column="19" />
+            <state relative-caret-position="376">
+              <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -163,7 +124,7 @@
       <file leaf-file-name="TaskEndpoint.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/endpoint/TaskEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
+            <state relative-caret-position="285">
               <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
               <folding />
             </state>
@@ -572,11 +533,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/handler/NotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/handler/ExceptionHandler.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/service/TaskService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/handler/GlobalExceptionHandler.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/NotFoundException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/endpoint/TaskEndpoint.java" />
         <option value="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/service/TaskService.java" />
       </list>
     </option>
   </component>
@@ -727,71 +688,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="endpoint" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2Bdone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2Bdone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thoughtworks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2Bdone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="2Bdone" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="org.jetbrains.plugins.gradle.projectView.GradleTreeStructureProvider$GradleSourceSetDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="thoughtworks" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="exception" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -811,15 +708,15 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
-  <component name="RunManager" selected="Application.2BdoneApplication">
+  <component name="RunManager" selected="JUnit.TaskServiceFunctionTest">
     <configuration default="false" name="TaskServiceFunctionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1343,13 +1240,17 @@
       <option name="project" value="LOCAL" />
       <updated>1486112790538</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Refactor function deleteTask and related unit tests to return void instead of boolean in package com.thoughtworks.service.TaskService, but throw NotFoundException once the id is not found">
+      <created>1486176200383</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1486176200383</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TaskServiceFunctionTest - 2017.02.03 at 10h 42m 57s.xml">
-      <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TaskServiceFunctionTest - 2017.02.03 at 10h 45m 45s.xml">
       <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
     </history-entry>
@@ -1377,6 +1278,9 @@
     <history-entry file="TaskServiceFunctionTest - 2017.02.04 at 10h 30m 45s.xml">
       <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TaskServiceFunctionTest - 2017.02.04 at 11h 16m 24s.xml">
+      <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="820" extended-state="6" />
@@ -1394,7 +1298,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997253" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1405,7 +1309,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42131618" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.42703864" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1442,7 +1346,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create a sql migration script to create table TASK" />
     <MESSAGE value="Create a class TaskService in package com.thoughtworks.service" />
     <MESSAGE value="Add a class EnvProfile in package com.thoughtworks.common.constant" />
     <MESSAGE value="Create a test class TaskServiceFunctionTest in package test.functional.task" />
@@ -1467,7 +1370,8 @@
     <MESSAGE value="Add a enum ErrorCode in package com.thoughtworks.common.exception.handler to define NOT_FOUND exception" />
     <MESSAGE value="Add a class BaseResponseException inherited from class RuntimeException in package com.thoughtworks.common.exception.handler" />
     <MESSAGE value="Add a class NotFoundException inherited from class BaseResponseException in package com.thoughtworks.common.exception.handler" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add a class NotFoundException inherited from class BaseResponseException in package com.thoughtworks.common.exception.handler" />
+    <MESSAGE value="Refactor function deleteTask and related unit tests to return void instead of boolean in package com.thoughtworks.service.TaskService, but throw NotFoundException once the id is not found" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor function deleteTask and related unit tests to return void instead of boolean in package com.thoughtworks.service.TaskService, but throw NotFoundException once the id is not found" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1492,7 +1396,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1500,7 +1403,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1516,21 +1418,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#604#605#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#737#738#0" expanded="false" />
-            <element signature="e#769#770#0" expanded="false" />
-            <element signature="e#808#809#0" expanded="false" />
-            <element signature="e#842#843#0" expanded="false" />
-            <element signature="e#897#898#0" expanded="false" />
-            <element signature="e#938#939#0" expanded="false" />
-            <element signature="e#974#975#0" expanded="false" />
-            <element signature="e#1013#1014#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1538,7 +1426,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1554,7 +1441,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1562,7 +1448,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1578,21 +1463,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#604#605#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#737#738#0" expanded="false" />
-            <element signature="e#769#770#0" expanded="false" />
-            <element signature="e#808#809#0" expanded="false" />
-            <element signature="e#842#843#0" expanded="false" />
-            <element signature="e#897#898#0" expanded="false" />
-            <element signature="e#938#939#0" expanded="false" />
-            <element signature="e#974#975#0" expanded="false" />
-            <element signature="e#1013#1014#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1600,7 +1471,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1616,7 +1486,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1624,7 +1493,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1640,7 +1508,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="15" lean-forward="true" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1656,7 +1523,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1680,7 +1546,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1696,7 +1561,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1712,7 +1576,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1736,7 +1599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1744,7 +1606,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="37" lean-forward="false" selection-start-line="0" selection-start-column="37" selection-end-line="0" selection-end-column="37" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1752,7 +1613,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="62" lean-forward="false" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1781,7 +1641,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="6" column="21" lean-forward="false" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1796,7 +1655,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1811,9 +1669,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="7" column="54" lean-forward="false" selection-start-line="7" selection-start-column="54" selection-end-line="7" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1821,21 +1676,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#604#605#0" expanded="false" />
-            <element signature="e#634#635#0" expanded="false" />
-            <element signature="e#665#666#0" expanded="false" />
-            <element signature="e#697#698#0" expanded="false" />
-            <element signature="e#737#738#0" expanded="false" />
-            <element signature="e#769#770#0" expanded="false" />
-            <element signature="e#808#809#0" expanded="false" />
-            <element signature="e#842#843#0" expanded="false" />
-            <element signature="e#897#898#0" expanded="false" />
-            <element signature="e#938#939#0" expanded="false" />
-            <element signature="e#974#975#0" expanded="false" />
-            <element signature="e#1013#1014#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1860,17 +1701,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="44" column="13" lean-forward="false" selection-start-line="44" selection-start-column="13" selection-end-line="44" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#4059#0" expanded="false" />
-            <element signature="e#1247#1248#0" expanded="false" />
-            <element signature="e#1270#1271#0" expanded="false" />
-            <element signature="e#1663#1664#0" expanded="false" />
-            <element signature="e#1693#1694#0" expanded="false" />
-            <element signature="e#2406#2407#0" expanded="false" />
-            <element signature="e#2443#2444#0" expanded="false" />
-            <element signature="e#3173#3174#0" expanded="false" />
-            <element signature="e#3201#3202#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1882,19 +1713,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/service/TaskService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="34" column="16" lean-forward="false" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/NotFoundException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
+        <state relative-caret-position="60">
           <caret line="5" column="37" lean-forward="false" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1902,26 +1723,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/handler/GlobalExceptionHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="4" lean-forward="false" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/handler/GlobalExceptionHandler.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/endpoint/TaskEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
+        <state relative-caret-position="285">
           <caret line="29" column="29" lean-forward="false" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/service/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="346">
+          <caret line="35" column="27" lean-forward="true" selection-start-line="35" selection-start-column="27" selection-end-line="35" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="142" column="19" lean-forward="false" selection-start-line="142" selection-start-column="19" selection-end-line="142" selection-end-column="19" />
+        <state relative-caret-position="376">
+          <caret line="148" column="5" lean-forward="true" selection-start-line="148" selection-start-column="5" selection-end-line="148" selection-end-column="5" />
           <folding />
         </state>
       </provider>
