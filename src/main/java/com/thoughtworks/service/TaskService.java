@@ -1,8 +1,9 @@
 package com.thoughtworks.service;
 
+import com.thoughtworks.common.exception.NotFoundException;
 import com.thoughtworks.common.jpa.TaskRepository;
 import com.thoughtworks.entity.Task;
-import javassist.NotFoundException;
+import org.aspectj.weaver.ast.Not;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
@@ -31,13 +32,12 @@ public class TaskService {
         return task;
     }
 
-    public boolean deleteTask(Long id) {
-        boolean result = false;
+    public void deleteTask(Long id) throws NotFoundException {
         Task task = taskRepository.findById(id);
         if (task != null) {
             taskRepository.delete(id);
-            result = true;
+        } else {
+            throw new NotFoundException("Task not found with id: " + id);
         }
-        return result;
     }
 }

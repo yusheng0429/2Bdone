@@ -26,8 +26,7 @@ targetCompatibility = 1.8
 
 ext.libraries = [
         flyway_core: dependencies.create('org.flywaydb:flyway-core:4.0.3'),
-        assertj_core: dependencies.create('org.assertj:assertj-core:3.0.0'),
-        swagger_jersey2_jaxrs: dependencies.create('io.swagger:swagger-jersey2-jaxrs:1.5.9')
+        assertj_core: dependencies.create('org.assertj:assertj-core:3.0.0')
 ]
 
 dependencies {
@@ -39,7 +38,6 @@ dependencies {
 
     compile libraries.flyway_core
     compile libraries.assertj_core
-    compile libraries.swagger_jersey2_jaxrs
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
     testCompile("com.h2database:h2")

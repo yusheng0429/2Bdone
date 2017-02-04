@@ -2,18 +2,16 @@ package test.functional.task;
 
 import com.thoughtworks.ToBdoneApplication;
 import com.thoughtworks.common.constant.EnvProfile;
+import com.thoughtworks.common.exception.NotFoundException;
 import com.thoughtworks.common.jpa.TaskRepository;
 import com.thoughtworks.entity.Task;
 import com.thoughtworks.service.TaskService;
-import javassist.NotFoundException;
 import org.assertj.core.util.Lists;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Sort;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -118,26 +116,34 @@ public class TaskServiceFunctionTest {
         assertThat(task.getId()).isEqualTo(defaultTasks.size() + 1);
         assertThat(task.getIsCompleted()).isFalse();
     }
-    
-    public void should_deleteTask_return_false_when_given_nonexisting_id() {
+
+    @Test
+    public void should_deleteTask_throw_exception_when_given_nonexisting_id() {
         //given
         Long id = 0L;
         //when
-        boolean result = taskSevice.deleteTask(id);
-        //then
-        assertThat(result).isFalse();
+        try {
+            taskSevice.deleteTask(id);
+        } catch (Exception ex) {
+            //then
+            assertThat(ex.getClass()).isEqualTo(NotFoundException.class);
+            assertThat(ex.getMessage()).isEqualTo("Task not found with id: " + id);
+        }
     }
 
     @Test
-    public void should_deleteTask_return_true_when_given_existing_id() {
+    public void should_deleteTask_delete_specific_task_when_given_existing_id() {
         //given
         Task task = defaultTasks.get(0);
         Long id = task.getId();
         //when
-        boolean result = taskSevice.deleteTask(id);
+        try {
+            taskSevice.deleteTask(id);
+        } catch (Exception ex) {
+            assert(false);
+        }
         List tasks = Lists.newArrayList(taskRepository.findAll());
         //then
-        assertThat(result).isTrue();
         assertThat(tasks.size()).isEqualTo(defaultTasks.size() - 1);
         assertThat(tasks.contains(task)).isFalse();
     }
