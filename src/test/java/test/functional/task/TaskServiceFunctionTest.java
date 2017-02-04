@@ -200,6 +200,24 @@ public class TaskServiceFunctionTest {
         assertThat(tasks.size()).isEqualTo(defaultActiveTaskCount + 1);
     }
 
+    @Test
+    public void should_changeAllTaskStatus_return_completed_tasks() {
+        //given
+        boolean isCompleted = true;
+        //when
+        try {
+            List<Task> tasks = taskSevice.changeAllTaskStatus(isCompleted);
+        } catch (Exception ex) {
+            assert(false);
+        }
+        List tasks = Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+        //then
+        assertThat(tasks.size()).isEqualTo(defaultTasks.size());
+        for (int i = 0; i < tasks.size(); i++) {
+            assertThat(((Task)tasks.get(i)).getIsCompleted()).isTrue();
+        }
+    }
+
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
     }

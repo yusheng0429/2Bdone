@@ -21,7 +21,7 @@ public class TaskEndpoint {
         return ResponseEntity.ok(taskService.getAllTasks());
     }
 
-    @RequestMapping(path = "/{isActive}", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(path = "/{isActive}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List> getAllTasks(@PathVariable boolean isActive) {
         return ResponseEntity.ok(taskService.getTasks(!isActive));
     }
