@@ -16,7 +16,7 @@ public class TaskEndpoint {
     @Autowired
     private TaskService taskService;
 
-    @RequestMapping(method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List> getAllTasks() {
         return ResponseEntity.ok(taskService.getAllTasks());
     }
@@ -26,14 +26,19 @@ public class TaskEndpoint {
         return ResponseEntity.ok(taskService.getTasks(!isActive));
     }
 
-    @RequestMapping(path = "/add", method = RequestMethod.POST, produces = "application/json")
+    @RequestMapping(path = "/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Task> addTask(@RequestParam(value = "name", required = true) String name) {
         return ResponseEntity.ok(taskService.addTask(name));
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-    @ResponseBody
-    public void deleteTask(@PathVariable("id")Long id) throws Exception {
+    public void deleteTask(@PathVariable("id")Long id) throws NotFoundException {
         taskService.deleteTask(id);
+    }
+
+    @RequestMapping(path = "/{id}", method = RequestMethod.PATCH, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Task> changeTaskStatus(@PathVariable("id") Long id,
+                                 @RequestBody(required = true) Task task) throws NotFoundException {
+        return ResponseEntity.ok(taskService.changeTaskStatus(id, task.getIsCompleted()));
     }
 }
