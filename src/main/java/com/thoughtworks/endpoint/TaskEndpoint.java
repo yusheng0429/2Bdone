@@ -39,6 +39,6 @@ public class TaskEndpoint {
     @RequestMapping(path = "/{id}", method = RequestMethod.PATCH, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Task> changeTaskStatus(@PathVariable("id") Long id,
                                  @RequestBody(required = true) Task task) throws NotFoundException {
-        return ResponseEntity.ok(taskService.changeTaskStatus(id, task.getIsCompleted()));
+        return ResponseEntity.ok(taskService.changeTaskStatus(id, task.getStatus()));
     }
 }

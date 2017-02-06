@@ -34,11 +34,11 @@ public class Task {
         this.name = name;
     }
 
-    public boolean getIsCompleted() {
+    public boolean getStatus() {
         return this.status;
     }
 
-    public void setIsCompleted(boolean isCompleted) {
+    public void setStatus(boolean isCompleted) {
         this.status = isCompleted;
     }
 

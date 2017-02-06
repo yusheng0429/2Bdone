@@ -26,7 +26,7 @@ public class TaskService {
     public Task addTask(String name) {
         Task task = new Task();
         task.setName(name);
-        task.setIsCompleted(false);
+        task.setStatus(false);
         taskRepository.save(task);
         return task;
     }
@@ -45,7 +45,7 @@ public class TaskService {
         if (task == null) {
             throw new NotFoundException(getTaskIdNotFoundErrorMessage(id));
         }
-        task.setIsCompleted(isCompleted);
+        task.setStatus(isCompleted);
         taskRepository.save(task);
         return task;
     }

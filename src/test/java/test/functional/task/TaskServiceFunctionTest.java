@@ -42,29 +42,29 @@ public class TaskServiceFunctionTest {
     public void setUp() {
         Task task = new Task();
         task.setName("Have breakfast");
-        task.setIsCompleted(true);
+        task.setStatus(true);
         saveDefaultTask(task);
 
         task = new Task();
         task.setName("Read the book");
-        task.setIsCompleted(false);
+        task.setStatus(false);
         saveDefaultTask(task);
 
         task = new Task();
         task.setName("Go to work");
-        task.setIsCompleted(true);
+        task.setStatus(true);
         saveDefaultTask(task);
 
         task = new Task();
         task.setName("Go to the grocery store");
-        task.setIsCompleted(false);
+        task.setStatus(false);
         saveDefaultTask(task);
     }
 
     private void saveDefaultTask(Task task) {
         taskRepository.save(task);
         defaultTasks.add(task);
-        if (task.getIsCompleted()) {
+        if (task.getStatus()) {
             defaultCompletedTaskCount++;
         } else {
             defaultActiveTaskCount++;
@@ -89,7 +89,7 @@ public class TaskServiceFunctionTest {
         //then
         assertThat(tasks.size()).isEqualTo(defaultActiveTaskCount);
         for (Task task : tasks) {
-            assertThat(task.getIsCompleted()).isFalse();
+            assertThat(task.getStatus()).isFalse();
         }
     }
 
@@ -102,7 +102,7 @@ public class TaskServiceFunctionTest {
         //then
         assertThat(tasks.size()).isEqualTo(defaultCompletedTaskCount);
         for (Task task : tasks) {
-            assertThat(task.getIsCompleted()).isTrue();
+            assertThat(task.getStatus()).isTrue();
         }
     }
 
@@ -114,7 +114,7 @@ public class TaskServiceFunctionTest {
         Task task = taskSevice.addTask(name);
         //then
         assertThat(task.getId()).isEqualTo(defaultTasks.size() + 1);
-        assertThat(task.getIsCompleted()).isFalse();
+        assertThat(task.getStatus()).isFalse();
     }
 
     @Test
@@ -176,7 +176,7 @@ public class TaskServiceFunctionTest {
         }
         List tasks = Lists.newArrayList(taskRepository.findByStatus(isCompleted));
         //then
-        assertThat(task.getIsCompleted()).isTrue();
+        assertThat(task.getStatus()).isTrue();
         assertThat(tasks.contains(task)).isTrue();
         assertThat(tasks.size()).isEqualTo(defaultCompletedTaskCount + 1);
     }
@@ -195,7 +195,7 @@ public class TaskServiceFunctionTest {
         }
         List tasks = Lists.newArrayList(taskRepository.findByStatus(isCompleted));
         //then
-        assertThat(task.getIsCompleted()).isFalse();
+        assertThat(task.getStatus()).isFalse();
         assertThat(tasks.contains(task)).isTrue();
         assertThat(tasks.size()).isEqualTo(defaultActiveTaskCount + 1);
     }
@@ -214,7 +214,25 @@ public class TaskServiceFunctionTest {
         //then
         assertThat(tasks.size()).isEqualTo(defaultTasks.size());
         for (Task task : tasks) {
-            assertThat(task.getIsCompleted()).isTrue();
+            assertThat(task.getStatus()).isTrue();
+        }
+    }
+
+    @Test
+    public void should_changeAllTaskStatus_return_active_tasks() {
+        //given
+        boolean isCompleted = false;
+        //when
+        try {
+            List<Task> tasks = taskSevice.changeAllTaskStatus(isCompleted);
+        } catch (Exception ex) {
+            assert(false);
+        }
+        List<Task> tasks = Lists.newArrayList(taskRepository.findAll());
+        //then
+        assertThat(tasks.size()).isEqualTo(defaultTasks.size());
+        for (Task task : tasks) {
+            assertThat(task.getStatus()).isFalse();
         }
     }
 
