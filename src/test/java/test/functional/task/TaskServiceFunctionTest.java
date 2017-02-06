@@ -210,11 +210,11 @@ public class TaskServiceFunctionTest {
         } catch (Exception ex) {
             assert(false);
         }
-        List tasks = Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+        List<Task> tasks = Lists.newArrayList(taskRepository.findAll());
         //then
         assertThat(tasks.size()).isEqualTo(defaultTasks.size());
-        for (int i = 0; i < tasks.size(); i++) {
-            assertThat(((Task)tasks.get(i)).getIsCompleted()).isTrue();
+        for (Task task : tasks) {
+            assertThat(task.getIsCompleted()).isTrue();
         }
     }
 

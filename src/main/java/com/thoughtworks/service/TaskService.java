@@ -50,6 +50,11 @@ public class TaskService {
         return task;
     }
 
+    public List<Task> changeAllTaskStatus(boolean isCompleted) {
+        taskRepository.updateStatus(isCompleted);
+        return Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+    }
+
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
     }
