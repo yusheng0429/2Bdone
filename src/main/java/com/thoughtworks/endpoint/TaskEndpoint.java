@@ -41,4 +41,9 @@ public class TaskEndpoint {
                                  @RequestBody(required = true) Task task) throws NotFoundException {
         return ResponseEntity.ok(taskService.changeTaskStatus(id, task.getStatus()));
     }
+
+    @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List> changeAllTaskStatus(@RequestParam(value = "isCompleted", required = true) boolean isCompleted) {
+        return ResponseEntity.ok(taskService.changeAllTaskStatus(isCompleted));
+    }
 }
