@@ -1,28 +1,32 @@
-package com.thoughtworks.service;
+package com.thoughtworks.task.service;
 
 import com.thoughtworks.common.exception.NotFoundException;
 import com.thoughtworks.common.jpa.TaskRepository;
-import com.thoughtworks.entity.Task;
+import com.thoughtworks.task.entity.Task;
+import com.thoughtworks.task.mapper.TaskMapper;
+import com.thoughtworks.task.model.TaskModel;
 import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
 
-import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @Component
 public class TaskService {
     @Autowired
     private TaskRepository taskRepository;
 
-    public List<Task> getAllTasks() {
-        return Lists.newArrayList(taskRepository.findAll(new Sort(Sort.Direction.ASC, "id")));
+    @Autowired
+    private TaskMapper taskMapper;
+
+    public List<TaskModel> getAllTasks() {
+        return getTaskModels(taskRepository.findAll(new Sort(Sort.Direction.ASC, "id")));
     }
 
-    public List<Task> getTasks(boolean isCompleted) {
-        return Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+    public List<TaskModel> getTasks(boolean isCompleted) {
+        return getTaskModels(taskRepository.findByStatus(isCompleted));
     }
 
     public Task addTask(String name) {
@@ -42,22 +46,30 @@ public class TaskService {
         }
     }
 
-    public Task changeTaskStatus(Long id, boolean isCompleted) throws NotFoundException {
+    public TaskModel changeTaskStatus(Long id, boolean isCompleted) throws NotFoundException {
         Task task = taskRepository.findById(id);
         if (task == null) {
             throw new NotFoundException(getTaskIdNotFoundErrorMessage(id));
         }
         task.setStatus(isCompleted);
         taskRepository.save(task);
-        return task;
+        return taskMapper.map(task, TaskModel.class);
     }
 
-    public List<Task> changeAllTaskStatus(boolean isCompleted) {
+    public List<TaskModel> changeAllTaskStatus(boolean isCompleted) {
         taskRepository.updateStatus(isCompleted);
-        return Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+        return getTaskModels(taskRepository.findByStatus(isCompleted));
     }
 
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
+    }
+
+    private List<TaskModel> getTaskModels(List<Task> tasks) {
+        List<TaskModel> taskModels = new ArrayList<TaskModel>();
+        for (Task task : tasks) {
+            taskModels.add(taskMapper.map(task, TaskModel.class));
+        }
+        return taskModels;
     }
 }

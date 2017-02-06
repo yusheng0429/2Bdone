@@ -1,4 +1,4 @@
-package com.thoughtworks.mapper;
+package com.thoughtworks.common.mapper;
 
 import ma.glasnost.orika.MapperFactory;
 import ma.glasnost.orika.converter.BidirectionalConverter;

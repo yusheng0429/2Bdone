@@ -1,4 +1,4 @@
-package com.thoughtworks.model;
+package com.thoughtworks.task.model;
 
 import java.util.Date;
 

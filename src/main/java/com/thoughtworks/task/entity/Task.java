@@ -1,4 +1,4 @@
-package com.thoughtworks.entity;
+package com.thoughtworks.task.entity;
 
 import org.springframework.data.annotation.CreatedDate;
 

@@ -1,8 +1,8 @@
-package com.thoughtworks.endpoint;
+package com.thoughtworks.task.endpoint;
 
 import com.thoughtworks.common.exception.NotFoundException;
-import com.thoughtworks.entity.Task;
-import com.thoughtworks.service.TaskService;
+import com.thoughtworks.task.entity.Task;
+import com.thoughtworks.task.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
