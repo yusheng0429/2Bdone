@@ -17,7 +17,7 @@ public class TaskService {
     @Autowired
     private TaskRepository taskRepository;
 
-    public List<TaskModel> getAllTasks() {
+    public List<Task> getAllTasks() {
         return Lists.newArrayList(taskRepository.findAll(new Sort(Sort.Direction.ASC, "id")));
     }
 
