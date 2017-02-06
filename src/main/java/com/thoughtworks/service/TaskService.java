@@ -10,13 +10,14 @@ import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class TaskService {
     @Autowired
     private TaskRepository taskRepository;
 
-    public List<Task> getAllTasks() {
+    public List<TaskModel> getAllTasks() {
         return Lists.newArrayList(taskRepository.findAll(new Sort(Sort.Direction.ASC, "id")));
     }
 

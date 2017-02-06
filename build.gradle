@@ -26,20 +26,23 @@ targetCompatibility = 1.8
 
 ext.libraries = [
         flyway_core: dependencies.create('org.flywaydb:flyway-core:4.0.3'),
-        assertj_core: dependencies.create('org.assertj:assertj-core:3.0.0')
+        assertj_core: dependencies.create('org.assertj:assertj-core:3.0.0'),
+        orika_core: dependencies.create('ma.glasnost.orika:orika-core:1.4.6')
 ]
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web:1.4.3.RELEASE")
-    compile 'org.springframework:spring-context:4.3.5.RELEASE'
+    compile("org.springframework:spring-context:4.3.5.RELEASE")
     compile("org.springframework.boot:spring-boot-starter-data-jpa")
-    compile "org.springframework:spring-test"
+    compile("org.springframework:spring-test")
     compile("mysql:mysql-connector-java")
+    compile("joda-time:joda-time")
 
+    compile libraries.orika_core
     compile libraries.flyway_core
     compile libraries.assertj_core
 
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile("junit:junit")
     testCompile("com.h2database:h2")
     testCompile("org.springframework.boot:spring-boot-starter-test")
 }
