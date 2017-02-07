@@ -65,6 +65,7 @@ public class TaskService {
         if (!isCompleted) {
             throw new ForbiddenException(getDeleteForbiddenErrorMessage());
         }
+        taskRepository.delete(taskRepository.findByIsCompleted(isCompleted));
     }
 
     private String getTaskIdNotFoundErrorMessage(Long id) {
