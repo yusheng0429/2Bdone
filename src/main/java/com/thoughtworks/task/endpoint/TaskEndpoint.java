@@ -22,9 +22,9 @@ public class TaskEndpoint {
         return ResponseEntity.ok(taskService.getAllTasks());
     }
 
-    @RequestMapping(path = "/{isActive}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<List> getAllTasks(@PathVariable boolean isActive) {
-        return ResponseEntity.ok(taskService.getTasks(!isActive));
+    @RequestMapping(path = "/{isCompleted}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<List> getAllTasks(@PathVariable boolean isCompleted) {
+        return ResponseEntity.ok(taskService.getTasks(isCompleted));
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

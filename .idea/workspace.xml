@@ -62,8 +62,8 @@
       <file leaf-file-name="TaskService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-48">
-              <caret line="58" column="56" lean-forward="true" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
+            <state relative-caret-position="129">
+              <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -149,8 +149,8 @@
       <file leaf-file-name="TaskEndpoint.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="495">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+            <state relative-caret-position="331">
+              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -1026,7 +1026,7 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/syu/IdeaProjects/2Bdone/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
   </component>
-  <component name="RunManager" selected="Application.2BdoneApplication">
+  <component name="RunManager" selected="JUnit.TaskServiceFunctionTest">
     <configuration default="false" name="TaskServiceFunctionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1325,13 +1325,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485331894056</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Add Application.yml in main\resources folder to configure port, flyway, and h2 database test settings">
-      <created>1485333489745</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1485333489745</updated>
     </task>
     <task id="LOCAL-00005" summary="Add package db\migration in main\resources folder">
       <created>1485333551537</created>
@@ -1669,16 +1662,17 @@
       <option name="project" value="LOCAL" />
       <updated>1486434748517</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Create a function deleteTasks in class com.thoughtworks.task.TaskEndpoit">
+      <created>1486436920296</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1486436920296</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TaskServiceFunctionTest - 2017.02.06 at 17h 51m 42s.xml">
-      <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TaskServiceFunctionTest - 2017.02.06 at 17h 54m 51s.xml">
-      <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TaskServiceFunctionTest - 2017.02.06 at 17h 59m 20s.xml">
       <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
     </history-entry>
@@ -1703,6 +1697,12 @@
     <history-entry file="TaskServiceFunctionTest - 2017.02.07 at 10h 31m 47s.xml">
       <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="TaskServiceFunctionTest - 2017.02.07 at 11h 31m 15s.xml">
+      <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskServiceFunctionTest - 2017.02.07 at 11h 31m 47s.xml">
+      <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="820" extended-state="0" />
@@ -1720,7 +1720,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39697802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39697802" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="MaxCompute Project Explorer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="DB Browser" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1806,7 +1806,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create a function deleteTask in class com.thoughtworks.task.TaskEndpoit" />
     <MESSAGE value="Create an unit test should_changeTaskStatus_throw_exception_when_given_nonexisting_id in class test.functional.task.TaskServiceFunctionalTest" />
     <MESSAGE value="Add a enum ErrorCode in package com.thoughtworks.common.exception.handler to define NOT_FOUND exception" />
     <MESSAGE value="Add a class BaseResponseException inherited from class RuntimeException in package com.thoughtworks.common.exception.handler" />
@@ -1831,7 +1830,8 @@
     <MESSAGE value="Create a function deleteTasks in class com.thoughtworks.task.TaskService" />
     <MESSAGE value="Create an unit test should_deleteTasks_return_true_when_given_true in class test.functional.task.TaskServiceFunctionalTest" />
     <MESSAGE value="Refactor the function deleteTasks to return true when all the completed tasks get removed successfully" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactor the function deleteTasks to return true when all the completed tasks get removed successfully" />
+    <MESSAGE value="Create a function deleteTasks in class com.thoughtworks.task.TaskEndpoit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create a function deleteTasks in class com.thoughtworks.task.TaskEndpoit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2188,14 +2188,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-48">
-          <caret line="58" column="56" lean-forward="true" selection-start-line="58" selection-start-column="56" selection-end-line="58" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
@@ -2204,10 +2196,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="27" column="27" lean-forward="false" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+        <state relative-caret-position="331">
+          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
           <folding />
         </state>
       </provider>
