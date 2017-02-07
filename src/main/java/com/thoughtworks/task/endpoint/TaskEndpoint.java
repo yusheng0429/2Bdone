@@ -1,5 +1,6 @@
 package com.thoughtworks.task.endpoint;
 
+import com.thoughtworks.common.exception.ForbiddenException;
 import com.thoughtworks.common.exception.NotFoundException;
 import com.thoughtworks.task.model.TaskModel;
 import com.thoughtworks.task.service.TaskService;
@@ -32,7 +33,7 @@ public class TaskEndpoint {
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-    public void deleteTask(@PathVariable("id")Long id) throws NotFoundException {
+    public void deleteTask(@PathVariable("id") Long id) throws NotFoundException {
         taskService.deleteTask(id);
     }
 
@@ -45,5 +46,10 @@ public class TaskEndpoint {
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List> changeAllTaskStatus(@RequestParam(value = "isCompleted", required = true) boolean isCompleted) {
         return ResponseEntity.ok(taskService.changeAllTaskStatus(isCompleted));
+    }
+
+    @RequestMapping(method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void deleteTasks(@RequestParam(value = "isCompleted", required = true) boolean isCompleted) throws ForbiddenException {
+        taskService.deleteTasks(isCompleted);
     }
 }

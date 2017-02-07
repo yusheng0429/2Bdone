@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="afd8b384-3a91-4698-806d-230d7b432a12" name="Default" comment="Create an unit test should_deleteTasks_return_true_when_given_true in class test.functional.task.TaskServiceFunctionalTest">
+    <list default="true" id="afd8b384-3a91-4698-806d-230d7b432a12" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -93,7 +93,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskServiceFunctionTest.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TaskServiceFunctionTest.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="222">
@@ -146,11 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskEndpoint.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaskEndpoint.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+            <state relative-caret-position="495">
+              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -567,14 +567,14 @@
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/service/TaskService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/mapper/MapperBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/mapper/TaskMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/mapper/MapperBase.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/entity/Task.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/model/TaskModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/ForbiddenException.java" />
-        <option value="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/dao/TaskRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java" />
       </list>
     </option>
   </component>
@@ -1024,8 +1024,9 @@
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/syu/IdeaProjects/2Bdone/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
   </component>
-  <component name="RunManager" selected="JUnit.TaskServiceFunctionTest">
+  <component name="RunManager" selected="Application.2BdoneApplication">
     <configuration default="false" name="TaskServiceFunctionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1324,13 +1325,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1485331894056</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Set up Run/Debug Configurations">
-      <created>1485333011658</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1485333011658</updated>
     </task>
     <task id="LOCAL-00004" summary="Add Application.yml in main\resources folder to configure port, flyway, and h2 database test settings">
       <created>1485333489745</created>
@@ -1668,7 +1662,14 @@
       <option name="project" value="LOCAL" />
       <updated>1486432900580</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Refactor the function deleteTasks to return true when all the completed tasks get removed successfully">
+      <created>1486434748517</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1486434748517</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1730,7 +1731,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26180258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26180258" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="MaxCompute Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Running Info" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1805,7 +1806,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Refactor the function deleteTask to return true when the task gets removed successfully" />
     <MESSAGE value="Create a function deleteTask in class com.thoughtworks.task.TaskEndpoit" />
     <MESSAGE value="Create an unit test should_changeTaskStatus_throw_exception_when_given_nonexisting_id in class test.functional.task.TaskServiceFunctionalTest" />
     <MESSAGE value="Add a enum ErrorCode in package com.thoughtworks.common.exception.handler to define NOT_FOUND exception" />
@@ -1830,7 +1830,8 @@
     <MESSAGE value="Create an unit test should_deleteTasks_throw_exception_when_given_false in class test.functional.task.TaskServiceFunctionalTest" />
     <MESSAGE value="Create a function deleteTasks in class com.thoughtworks.task.TaskService" />
     <MESSAGE value="Create an unit test should_deleteTasks_return_true_when_given_true in class test.functional.task.TaskServiceFunctionalTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create an unit test should_deleteTasks_return_true_when_given_true in class test.functional.task.TaskServiceFunctionalTest" />
+    <MESSAGE value="Refactor the function deleteTasks to return true when all the completed tasks get removed successfully" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor the function deleteTasks to return true when all the completed tasks get removed successfully" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2164,14 +2165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="37" column="0" lean-forward="true" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/common/mapper/MapperBase.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="147">
@@ -2207,6 +2200,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="298" column="5" lean-forward="true" selection-start-line="298" selection-start-column="5" selection-end-line="298" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
