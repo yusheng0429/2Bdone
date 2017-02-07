@@ -1,5 +1,6 @@
 package com.thoughtworks.task.service;
 
+import com.thoughtworks.common.exception.ForbiddenException;
 import com.thoughtworks.common.exception.NotFoundException;
 import com.thoughtworks.task.dao.TaskRepository;
 import com.thoughtworks.task.entity.Task;
@@ -60,9 +61,16 @@ public class TaskService {
         return getTaskModels(taskRepository.findByIsCompleted(isCompleted));
     }
 
+    public void deleteTasks(boolean isCompleted) throws ForbiddenException {
+        if (!isCompleted) {
+            throw new ForbiddenException(getDeleteForbiddenErrorMessage());
+        }
+    }
+
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
     }
+    private String getDeleteForbiddenErrorMessage() { return "Active tasks cannot be removed"; }
 
     private List<TaskModel> getTaskModels(List<Task> tasks) {
         List<TaskModel> taskModels = new ArrayList<TaskModel>();
