@@ -1,11 +1,10 @@
 package com.thoughtworks.task.service;
 
 import com.thoughtworks.common.exception.NotFoundException;
-import com.thoughtworks.common.jpa.TaskRepository;
+import com.thoughtworks.task.dao.TaskRepository;
 import com.thoughtworks.task.entity.Task;
 import com.thoughtworks.task.mapper.TaskMapper;
 import com.thoughtworks.task.model.TaskModel;
-import org.assertj.core.util.Lists;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Component;
@@ -26,15 +25,15 @@ public class TaskService {
     }
 
     public List<TaskModel> getTasks(boolean isCompleted) {
-        return getTaskModels(taskRepository.findByStatus(isCompleted));
+        return getTaskModels(taskRepository.findByIsCompleted(isCompleted));
     }
 
-    public Task addTask(String name) {
+    public TaskModel addTask(String name) {
         Task task = new Task();
         task.setName(name);
-        task.setStatus(false);
+        task.setIsCompleted(false);
         taskRepository.save(task);
-        return task;
+        return taskMapper.map(task, TaskModel.class);
     }
 
     public void deleteTask(Long id) throws NotFoundException {
@@ -51,14 +50,14 @@ public class TaskService {
         if (task == null) {
             throw new NotFoundException(getTaskIdNotFoundErrorMessage(id));
         }
-        task.setStatus(isCompleted);
+        task.setIsCompleted(isCompleted);
         taskRepository.save(task);
         return taskMapper.map(task, TaskModel.class);
     }
 
     public List<TaskModel> changeAllTaskStatus(boolean isCompleted) {
-        taskRepository.updateStatus(isCompleted);
-        return getTaskModels(taskRepository.findByStatus(isCompleted));
+        taskRepository.updateIsCompleted(isCompleted);
+        return getTaskModels(taskRepository.findByIsCompleted(isCompleted));
     }
 
     private String getTaskIdNotFoundErrorMessage(Long id) {

@@ -1,7 +1,7 @@
 package com.thoughtworks.task.endpoint;
 
 import com.thoughtworks.common.exception.NotFoundException;
-import com.thoughtworks.task.entity.Task;
+import com.thoughtworks.task.model.TaskModel;
 import com.thoughtworks.task.service.TaskService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -27,7 +27,7 @@ public class TaskEndpoint {
     }
 
     @RequestMapping(path = "/add", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Task> addTask(@RequestParam(value = "name", required = true) String name) {
+    public ResponseEntity<TaskModel> addTask(@RequestParam(value = "name", required = true) String name) {
         return ResponseEntity.ok(taskService.addTask(name));
     }
 
@@ -37,9 +37,9 @@ public class TaskEndpoint {
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.PATCH, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Task> changeTaskStatus(@PathVariable("id") Long id,
-                                 @RequestBody(required = true) Task task) throws NotFoundException {
-        return ResponseEntity.ok(taskService.changeTaskStatus(id, task.getStatus()));
+    public ResponseEntity<TaskModel> changeTaskStatus(@PathVariable("id") Long id,
+                                 @RequestBody(required = true) TaskModel task) throws NotFoundException {
+        return ResponseEntity.ok(taskService.changeTaskStatus(id, task.getIsCompleted()));
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

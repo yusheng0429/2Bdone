@@ -3,10 +3,11 @@ package test.functional.task;
 import com.thoughtworks.ToBdoneApplication;
 import com.thoughtworks.common.constant.EnvProfile;
 import com.thoughtworks.common.exception.NotFoundException;
-import com.thoughtworks.common.jpa.TaskRepository;
+import com.thoughtworks.task.dao.TaskRepository;
 import com.thoughtworks.task.entity.Task;
+import com.thoughtworks.task.mapper.TaskMapper;
+import com.thoughtworks.task.model.TaskModel;
 import com.thoughtworks.task.service.TaskService;
-import org.assertj.core.util.Lists;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,6 +19,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -28,7 +30,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ActiveProfiles({EnvProfile.TEST})
 @SpringBootTest(classes = ToBdoneApplication.class)
 public class TaskServiceFunctionTest {
-    List<Task> defaultTasks = new ArrayList<Task>();
+    List<TaskModel> defaultTaskModels = new ArrayList<TaskModel>();
     private int defaultActiveTaskCount = 0;
     private int defaultCompletedTaskCount = 0;
 
@@ -38,33 +40,36 @@ public class TaskServiceFunctionTest {
     @Autowired
     private TaskRepository taskRepository;
 
+    @Autowired
+    private TaskMapper taskMapper;
+
     @Before
     public void setUp() {
         Task task = new Task();
         task.setName("Have breakfast");
-        task.setStatus(true);
+        task.setIsCompleted(true);
         saveDefaultTask(task);
 
         task = new Task();
         task.setName("Read the book");
-        task.setStatus(false);
+        task.setIsCompleted(false);
         saveDefaultTask(task);
 
         task = new Task();
         task.setName("Go to work");
-        task.setStatus(true);
+        task.setIsCompleted(true);
         saveDefaultTask(task);
 
         task = new Task();
         task.setName("Go to the grocery store");
-        task.setStatus(false);
+        task.setIsCompleted(false);
         saveDefaultTask(task);
     }
 
     private void saveDefaultTask(Task task) {
         taskRepository.save(task);
-        defaultTasks.add(task);
-        if (task.getStatus()) {
+        defaultTaskModels.add(taskMapper.map(task, TaskModel.class));
+        if (task.getIsCompleted()) {
             defaultCompletedTaskCount++;
         } else {
             defaultActiveTaskCount++;
@@ -72,49 +77,54 @@ public class TaskServiceFunctionTest {
     }
 
     @Test
-    public void should_getAllTasks_return_tasks() {
+    public void should_getAllTasks_return_taskModels() {
         //given
         //when
-        List<Task> tasks = taskSevice.getAllTasks();
+        List<TaskModel> taskModels = taskSevice.getAllTasks();
         //then
-        assertThat(tasks).isEqualTo(defaultTasks);
+        assertThat(taskModels.size()).isEqualTo(defaultTaskModels.size());
+        Collections.sort(defaultTaskModels);
+        for (int i = 0; i < taskModels.size(); i++) {
+            assertThat(taskModels.get(i).compareTo(defaultTaskModels.get(i))).isZero();
+        }
     }
     
     @Test
-    public void should_getTasks_return_active_tasks_when_given_false() {
+    public void should_getTasks_return_active_taskModels_when_given_false() {
         //given
         boolean isCompleted = false;
         //when
-        List<Task> tasks = taskSevice.getTasks(isCompleted);
+        List<TaskModel> taskModels = taskSevice.getTasks(isCompleted);
         //then
-        assertThat(tasks.size()).isEqualTo(defaultActiveTaskCount);
-        for (Task task : tasks) {
-            assertThat(task.getStatus()).isFalse();
+        assertThat(taskModels.size()).isEqualTo(defaultActiveTaskCount);
+        for (TaskModel taskModel : taskModels) {
+            assertThat(taskModel.getIsCompleted()).isFalse();
         }
     }
 
     @Test
-    public void should_getTasks_return_completed_tasks_when_given_true() {
+    public void should_getTasks_return_completed_taskModels_when_given_true() {
         //given
         boolean isCompleted = true;
         //when
-        List<Task> tasks = taskSevice.getTasks(isCompleted);
+        List<TaskModel> taskModels = taskSevice.getTasks(isCompleted);
         //then
-        assertThat(tasks.size()).isEqualTo(defaultCompletedTaskCount);
-        for (Task task : tasks) {
-            assertThat(task.getStatus()).isTrue();
+        assertThat(taskModels.size()).isEqualTo(defaultCompletedTaskCount);
+        for (TaskModel taskModel : taskModels) {
+            assertThat(taskModel.getIsCompleted()).isTrue();
         }
     }
 
     @Test
-    public void should_addTask_return_a_created_task() {
+    public void should_addTask_return_a_created_taskModel() {
         //given
         String name = "Go to gym";
         //when
-        Task task = taskSevice.addTask(name);
+        TaskModel taskModel = taskSevice.addTask(name);
+        List<Task> tasks = taskRepository.findAll();
         //then
-        assertThat(task.getId()).isEqualTo(defaultTasks.size() + 1);
-        assertThat(task.getStatus()).isFalse();
+        assertThat(tasks.size()).isEqualTo(defaultTaskModels.size() + 1);
+        assertThat(taskModel.getIsCompleted()).isFalse();
     }
 
     @Test
@@ -132,20 +142,20 @@ public class TaskServiceFunctionTest {
     }
 
     @Test
-    public void should_deleteTask_delete_specific_task_when_given_existing_id() {
+    public void should_deleteTask_delete_specific_taskModel_when_given_existing_id() {
         //given
-        Task task = defaultTasks.get(0);
-        Long id = task.getId();
+        TaskModel taskModel = defaultTaskModels.get(0);
+        Long id = taskModel.getId();
         //when
         try {
             taskSevice.deleteTask(id);
         } catch (Exception ex) {
             assert(false);
         }
-        List tasks = Lists.newArrayList(taskRepository.findAll());
+        List<Task> tasks = taskRepository.findAll();
         //then
-        assertThat(tasks.size()).isEqualTo(defaultTasks.size() - 1);
-        assertThat(tasks.contains(task)).isFalse();
+        assertThat(tasks.size()).isEqualTo(defaultTaskModels.size() - 1);
+        tasks.forEach(task -> assertThat(task.getId()).isNotEqualTo(id));
     }
     
     @Test
@@ -154,7 +164,7 @@ public class TaskServiceFunctionTest {
         Long id = 0L;
         //when
         try {
-            Task task = taskSevice.changeTaskStatus(id, true);
+            TaskModel taskModel = taskSevice.changeTaskStatus(id, true);
         } catch (Exception ex) {
             //then
             assertThat(ex.getClass()).isEqualTo(NotFoundException.class);
@@ -163,76 +173,98 @@ public class TaskServiceFunctionTest {
     }
     
     @Test
-    public void should_changeTaskStatus_return_completed_task() {
+    public void should_changeTaskStatus_return_completed_taskModel() {
         //given
-        Task task = defaultTasks.get(1);
-        Long id = task.getId();
+        TaskModel taskModel = defaultTaskModels.get(1);
+        Long id = taskModel.getId();
         boolean isCompleted = true;
+        boolean isContained = false;
         //when
         try {
-            task = taskSevice.changeTaskStatus(id, isCompleted);
+            taskModel = taskSevice.changeTaskStatus(id, isCompleted);
         } catch (Exception ex) {
             assert(false);
         }
-        List tasks = Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+        List<Task> tasks = taskRepository.findByIsCompleted(isCompleted);
+        for (Task task: tasks) {
+            if (task.getId().equals(id)) {
+                isContained = true;
+            }
+        }
         //then
-        assertThat(task.getStatus()).isTrue();
-        assertThat(tasks.contains(task)).isTrue();
+        assertThat(taskModel.getIsCompleted()).isTrue();
+        assertThat(isContained).isTrue();
         assertThat(tasks.size()).isEqualTo(defaultCompletedTaskCount + 1);
     }
 
     @Test
-    public void should_changeTaskStatus_return_active_task() {
+    public void should_changeTaskStatus_return_active_taskModel() {
         //given
-        Task task = defaultTasks.get(2);
-        Long id = task.getId();
+        TaskModel taskModel = defaultTaskModels.get(2);
+        Long id = taskModel.getId();
         boolean isCompleted = false;
+        boolean isContained = false;
         //when
         try {
-            task = taskSevice.changeTaskStatus(id, isCompleted);
+            taskModel = taskSevice.changeTaskStatus(id, isCompleted);
         } catch (Exception ex) {
             assert(false);
         }
-        List tasks = Lists.newArrayList(taskRepository.findByStatus(isCompleted));
+        List<Task> tasks = taskRepository.findByIsCompleted(isCompleted);
+        for (Task task: tasks) {
+            if (task.getId().equals(id)) {
+                isContained = true;
+            }
+        }
         //then
-        assertThat(task.getStatus()).isFalse();
-        assertThat(tasks.contains(task)).isTrue();
+        assertThat(taskModel.getIsCompleted()).isFalse();
+        assertThat(isContained).isTrue();
         assertThat(tasks.size()).isEqualTo(defaultActiveTaskCount + 1);
     }
 
     @Test
-    public void should_changeAllTaskStatus_return_completed_tasks() {
+    public void should_changeAllTaskStatus_return_completed_taskModels() {
         //given
+        List<TaskModel> taskModels = null;
         boolean isCompleted = true;
         //when
         try {
-            List<Task> tasks = taskSevice.changeAllTaskStatus(isCompleted);
+            taskModels = taskSevice.changeAllTaskStatus(isCompleted);
         } catch (Exception ex) {
             assert(false);
         }
-        List<Task> tasks = Lists.newArrayList(taskRepository.findAll());
+        List<Task> tasks = taskRepository.findAll();
         //then
-        assertThat(tasks.size()).isEqualTo(defaultTasks.size());
+        assertThat(tasks.size()).isEqualTo(defaultTaskModels.size());
+        assertThat(taskModels.size()).isEqualTo(defaultTaskModels.size());
+        for (TaskModel taskModel : taskModels) {
+            assertThat(taskModel.getIsCompleted()).isTrue();
+        }
         for (Task task : tasks) {
-            assertThat(task.getStatus()).isTrue();
+            assertThat(task.getIsCompleted()).isTrue();
         }
     }
 
     @Test
-    public void should_changeAllTaskStatus_return_active_tasks() {
+    public void should_changeAllTaskStatus_return_active_taskModels() {
         //given
+        List<TaskModel> taskModels = null;
         boolean isCompleted = false;
         //when
         try {
-            List<Task> tasks = taskSevice.changeAllTaskStatus(isCompleted);
+            taskModels = taskSevice.changeAllTaskStatus(isCompleted);
         } catch (Exception ex) {
             assert(false);
         }
-        List<Task> tasks = Lists.newArrayList(taskRepository.findAll());
+        List<Task> tasks = taskRepository.findAll();
         //then
-        assertThat(tasks.size()).isEqualTo(defaultTasks.size());
+        assertThat(tasks.size()).isEqualTo(defaultTaskModels.size());
+        assertThat(taskModels.size()).isEqualTo(defaultTaskModels.size());
+        for (TaskModel taskModel : taskModels) {
+            assertThat(taskModel.getIsCompleted()).isFalse();
+        }
         for (Task task : tasks) {
-            assertThat(task.getStatus()).isFalse();
+            assertThat(task.getIsCompleted()).isFalse();
         }
     }
 

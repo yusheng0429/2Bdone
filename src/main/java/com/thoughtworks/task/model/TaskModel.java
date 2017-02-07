@@ -2,7 +2,7 @@ package com.thoughtworks.task.model;
 
 import java.util.Date;
 
-public class TaskModel {
+public class TaskModel implements Comparable<TaskModel> {
     private Long id;
     private String name;
     private boolean isCompleted;
@@ -22,15 +22,20 @@ public class TaskModel {
         this.name = name;
     }
 
-    public boolean getStatus() {
+    public boolean getIsCompleted() {
         return this.isCompleted;
     }
 
-    public void setStatus(boolean isCompleted) { this.isCompleted = isCompleted; }
+    public void setIsCompleted(boolean isCompleted) { this.isCompleted = isCompleted; }
 
     public Date getTimeCreated() {
         return this.timeCreated;
     }
 
     public void setTimeCreated(Date timeCreated) { this.timeCreated = timeCreated; }
+
+    @Override
+    public int compareTo(TaskModel taskModel) {
+        return this.id.compareTo(taskModel.getId());
+    }
 }
