@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="afd8b384-3a91-4698-806d-230d7b432a12" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java" afterPath="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" afterPath="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -59,11 +59,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskService.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TaskService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+            <state relative-caret-position="147">
+              <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -93,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaskServiceFunctionTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaskServiceFunctionTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="282">
-              <caret line="288" column="4" lean-forward="false" selection-start-line="288" selection-start-column="4" selection-end-line="288" selection-end-column="96" />
+            <state relative-caret-position="252">
+              <caret line="297" column="0" lean-forward="false" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -573,8 +573,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/dao/TaskRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/model/TaskModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/common/exception/ForbiddenException.java" />
-        <option value="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java" />
+        <option value="$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java" />
       </list>
     </option>
   </component>
@@ -1325,13 +1325,6 @@
       <option name="presentableId" value="Default" />
       <updated>1485331894056</updated>
     </task>
-    <task id="LOCAL-00001" summary="Set up build.gradle to add in dependencies on Spring Boot, Spring Data and Flyway; Test: Spring Boot Test and h2 database">
-      <created>1485332356696</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1485332356696</updated>
-    </task>
     <task id="LOCAL-00002" summary="Add class ToBdoneApplication with main function in the package com.thoughtworks">
       <created>1485332837352</created>
       <option name="number" value="00002" />
@@ -1668,13 +1661,17 @@
       <option name="project" value="LOCAL" />
       <updated>1486432281783</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="Create a function deleteTasks in class com.thoughtworks.task.TaskService">
+      <created>1486432513480</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1486432513484</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TaskServiceFunctionTest - 2017.02.06 at 17h 43m 54s.xml">
-      <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="TaskServiceFunctionTest - 2017.02.06 at 17h 49m 22s.xml">
       <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
     </history-entry>
@@ -1700,6 +1697,9 @@
       <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="TaskServiceFunctionTest - 2017.02.07 at 09h 54m 54s.xml">
+      <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TaskServiceFunctionTest - 2017.02.07 at 09h 58m 32s.xml">
       <configuration name="TaskServiceFunctionTest" configurationId="JUnit" />
     </history-entry>
   </component>
@@ -1805,7 +1805,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Create a function deleteTask in class com.thoughtworks.task.TaskService" />
     <MESSAGE value="Create an unit test should_deleteTask_return_true_when_given_existing_id in class test.functional.task.TaskServiceFunctionalTest" />
     <MESSAGE value="Refactor the function deleteTask to return true when the task gets removed successfully" />
     <MESSAGE value="Create a function deleteTask in class com.thoughtworks.task.TaskEndpoit" />
@@ -1830,7 +1829,8 @@
     <MESSAGE value="Refactor the existing endpoint functions to replace Task entity by TaskModel" />
     <MESSAGE value="Create a class ForbiddenException inherited from Exception in package com.thoughtworks.common.exception" />
     <MESSAGE value="Create an unit test should_deleteTasks_throw_exception_when_given_false in class test.functional.task.TaskServiceFunctionalTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create an unit test should_deleteTasks_throw_exception_when_given_false in class test.functional.task.TaskServiceFunctionalTest" />
+    <MESSAGE value="Create a function deleteTasks in class com.thoughtworks.task.TaskService" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create a function deleteTasks in class com.thoughtworks.task.TaskService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2068,6 +2068,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="49" column="12" lean-forward="false" selection-start-line="49" selection-start-column="12" selection-end-line="49" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -2155,14 +2156,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="288" column="4" lean-forward="false" selection-start-line="288" selection-start-column="4" selection-end-line="288" selection-end-column="96" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/endpoint/TaskEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -2204,8 +2197,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/thoughtworks/task/service/TaskService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="66" column="9" lean-forward="true" selection-start-line="66" selection-start-column="9" selection-end-line="66" selection-end-column="9" />
+        <state relative-caret-position="147">
+          <caret line="67" column="5" lean-forward="true" selection-start-line="67" selection-start-column="5" selection-end-line="67" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/test/functional/task/TaskServiceFunctionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="297" column="0" lean-forward="false" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
           <folding />
         </state>
       </provider>

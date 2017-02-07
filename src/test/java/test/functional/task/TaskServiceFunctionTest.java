@@ -283,6 +283,21 @@ public class TaskServiceFunctionTest {
         }
     }
 
+    @Test
+    public void should_deleteTasks_return_true_when_given_true() {
+        //given
+        boolean isCompleted = true;
+        //when
+        try {
+            taskSevice.deleteTasks(isCompleted);
+        } catch (Exception ex) {
+            assert(false);
+        }
+        List<Task> completedTasks = taskRepository.findByIsCompleted(true);
+        //then
+        assertThat(completedTasks.size()).isZero();
+    }
+
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
     }
