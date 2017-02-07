@@ -2,6 +2,7 @@ package test.functional.task;
 
 import com.thoughtworks.ToBdoneApplication;
 import com.thoughtworks.common.constant.EnvProfile;
+import com.thoughtworks.common.exception.ForbiddenException;
 import com.thoughtworks.common.exception.NotFoundException;
 import com.thoughtworks.task.dao.TaskRepository;
 import com.thoughtworks.task.entity.Task;
@@ -271,14 +272,19 @@ public class TaskServiceFunctionTest {
     @Test
     public void should_deleteTasks_throw_exception_when_given_false() {
         //given
-        
+        boolean isCompleted = false;
         //when
-        
-        //then
-        
+        try {
+            taskSevice.deleteTasks(isCompleted);
+        } catch (Exception ex) {
+            //then
+            assertThat(ex.getClass()).isEqualTo(ForbiddenException.class);
+            assertThat(ex.getMessage()).isEqualTo(getDeleteForbiddenErrorMessage());
+        }
     }
 
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
     }
+    private String getDeleteForbiddenErrorMessage() { return "Active tasks cannot be removed"; }
 }
