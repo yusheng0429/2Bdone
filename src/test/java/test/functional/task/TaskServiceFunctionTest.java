@@ -267,6 +267,16 @@ public class TaskServiceFunctionTest {
             assertThat(task.getIsCompleted()).isFalse();
         }
     }
+    
+    @Test
+    public void should_deleteTasks_throw_exception_when_given_false() {
+        //given
+        
+        //when
+        
+        //then
+        
+    }
 
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
