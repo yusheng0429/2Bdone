@@ -33,7 +33,7 @@ public class TaskEndpoint {
     }
 
     @RequestMapping(path = "/{id}", method = RequestMethod.DELETE)
-    public void deleteTask(@PathVariable("id") Long id) throws NotFoundException {
+    public void deleteTask(@PathVariable(value = "id") Long id) throws NotFoundException {
         taskService.deleteTask(id);
     }
 

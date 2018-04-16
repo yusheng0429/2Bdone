@@ -8,12 +8,12 @@ import com.thoughtworks.task.mapper.TaskMapper;
 import com.thoughtworks.task.model.TaskModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
+@Service
 public class TaskService {
     @Autowired
     private TaskRepository taskRepository;
@@ -71,7 +71,10 @@ public class TaskService {
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
     }
-    private String getDeleteForbiddenErrorMessage() { return "Active tasks cannot be removed"; }
+
+    private String getDeleteForbiddenErrorMessage() {
+        return "Active tasks cannot be removed";
+    }
 
     private List<TaskModel> getTaskModels(List<Task> tasks) {
         List<TaskModel> taskModels = new ArrayList<TaskModel>();

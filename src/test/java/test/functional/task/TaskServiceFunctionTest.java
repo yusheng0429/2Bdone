@@ -9,6 +9,7 @@ import com.thoughtworks.task.entity.Task;
 import com.thoughtworks.task.mapper.TaskMapper;
 import com.thoughtworks.task.model.TaskModel;
 import com.thoughtworks.task.service.TaskService;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,7 +37,7 @@ public class TaskServiceFunctionTest {
     private int defaultCompletedTaskCount = 0;
 
     @Autowired
-    private TaskService taskSevice;
+    private TaskService taskService;
 
     @Autowired
     private TaskRepository taskRepository;
@@ -67,6 +68,7 @@ public class TaskServiceFunctionTest {
         saveDefaultTask(task);
     }
 
+
     private void saveDefaultTask(Task task) {
         taskRepository.save(task);
         defaultTaskModels.add(taskMapper.map(task, TaskModel.class));
@@ -81,7 +83,7 @@ public class TaskServiceFunctionTest {
     public void should_getAllTasks_return_taskModels() {
         //given
         //when
-        List<TaskModel> taskModels = taskSevice.getAllTasks();
+        List<TaskModel> taskModels = taskService.getAllTasks();
         //then
         assertThat(taskModels.size()).isEqualTo(defaultTaskModels.size());
         Collections.sort(defaultTaskModels);
@@ -89,13 +91,13 @@ public class TaskServiceFunctionTest {
             assertThat(taskModels.get(i).compareTo(defaultTaskModels.get(i))).isZero();
         }
     }
-    
+
     @Test
     public void should_getTasks_return_active_taskModels_when_given_false() {
         //given
         boolean isCompleted = false;
         //when
-        List<TaskModel> taskModels = taskSevice.getTasks(isCompleted);
+        List<TaskModel> taskModels = taskService.getTasks(isCompleted);
         //then
         assertThat(taskModels.size()).isEqualTo(defaultActiveTaskCount);
         for (TaskModel taskModel : taskModels) {
@@ -108,7 +110,7 @@ public class TaskServiceFunctionTest {
         //given
         boolean isCompleted = true;
         //when
-        List<TaskModel> taskModels = taskSevice.getTasks(isCompleted);
+        List<TaskModel> taskModels = taskService.getTasks(isCompleted);
         //then
         assertThat(taskModels.size()).isEqualTo(defaultCompletedTaskCount);
         for (TaskModel taskModel : taskModels) {
@@ -121,7 +123,7 @@ public class TaskServiceFunctionTest {
         //given
         String name = "Go to gym";
         //when
-        TaskModel taskModel = taskSevice.addTask(name);
+        TaskModel taskModel = taskService.addTask(name);
         List<Task> tasks = taskRepository.findAll();
         //then
         assertThat(tasks.size()).isEqualTo(defaultTaskModels.size() + 1);
@@ -134,7 +136,7 @@ public class TaskServiceFunctionTest {
         Long id = 0L;
         //when
         try {
-            taskSevice.deleteTask(id);
+            taskService.deleteTask(id);
         } catch (Exception ex) {
             //then
             assertThat(ex.getClass()).isEqualTo(NotFoundException.class);
@@ -149,30 +151,30 @@ public class TaskServiceFunctionTest {
         Long id = taskModel.getId();
         //when
         try {
-            taskSevice.deleteTask(id);
+            taskService.deleteTask(id);
         } catch (Exception ex) {
-            assert(false);
+            assert (false);
         }
         List<Task> tasks = taskRepository.findAll();
         //then
         assertThat(tasks.size()).isEqualTo(defaultTaskModels.size() - 1);
         tasks.forEach(task -> assertThat(task.getId()).isNotEqualTo(id));
     }
-    
+
     @Test
     public void should_changeTaskStatus_throw_exception_when_given_nonexisting_id() {
         //given
         Long id = 0L;
         //when
         try {
-            TaskModel taskModel = taskSevice.changeTaskStatus(id, true);
+            TaskModel taskModel = taskService.changeTaskStatus(id, true);
         } catch (Exception ex) {
             //then
             assertThat(ex.getClass()).isEqualTo(NotFoundException.class);
             assertThat(ex.getMessage()).isEqualTo(getTaskIdNotFoundErrorMessage(id));
         }
     }
-    
+
     @Test
     public void should_changeTaskStatus_return_completed_taskModel() {
         //given
@@ -182,12 +184,12 @@ public class TaskServiceFunctionTest {
         boolean isContained = false;
         //when
         try {
-            taskModel = taskSevice.changeTaskStatus(id, isCompleted);
+            taskModel = taskService.changeTaskStatus(id, isCompleted);
         } catch (Exception ex) {
-            assert(false);
+            assert (false);
         }
         List<Task> tasks = taskRepository.findByIsCompleted(isCompleted);
-        for (Task task: tasks) {
+        for (Task task : tasks) {
             if (task.getId().equals(id)) {
                 isContained = true;
             }
@@ -207,12 +209,12 @@ public class TaskServiceFunctionTest {
         boolean isContained = false;
         //when
         try {
-            taskModel = taskSevice.changeTaskStatus(id, isCompleted);
+            taskModel = taskService.changeTaskStatus(id, isCompleted);
         } catch (Exception ex) {
-            assert(false);
+            assert (false);
         }
         List<Task> tasks = taskRepository.findByIsCompleted(isCompleted);
-        for (Task task: tasks) {
+        for (Task task : tasks) {
             if (task.getId().equals(id)) {
                 isContained = true;
             }
@@ -230,9 +232,9 @@ public class TaskServiceFunctionTest {
         boolean isCompleted = true;
         //when
         try {
-            taskModels = taskSevice.changeAllTaskStatus(isCompleted);
+            taskModels = taskService.changeAllTaskStatus(isCompleted);
         } catch (Exception ex) {
-            assert(false);
+            assert (false);
         }
         List<Task> tasks = taskRepository.findAll();
         //then
@@ -253,9 +255,9 @@ public class TaskServiceFunctionTest {
         boolean isCompleted = false;
         //when
         try {
-            taskModels = taskSevice.changeAllTaskStatus(isCompleted);
+            taskModels = taskService.changeAllTaskStatus(isCompleted);
         } catch (Exception ex) {
-            assert(false);
+            assert (false);
         }
         List<Task> tasks = taskRepository.findAll();
         //then
@@ -268,14 +270,14 @@ public class TaskServiceFunctionTest {
             assertThat(task.getIsCompleted()).isFalse();
         }
     }
-    
+
     @Test
     public void should_deleteTasks_throw_exception_when_given_false() {
         //given
         boolean isCompleted = false;
         //when
         try {
-            taskSevice.deleteTasks(isCompleted);
+            taskService.deleteTasks(isCompleted);
         } catch (Exception ex) {
             //then
             assertThat(ex.getClass()).isEqualTo(ForbiddenException.class);
@@ -289,9 +291,9 @@ public class TaskServiceFunctionTest {
         boolean isCompleted = true;
         //when
         try {
-            taskSevice.deleteTasks(isCompleted);
+            taskService.deleteTasks(isCompleted);
         } catch (Exception ex) {
-            assert(false);
+            assert (false);
         }
         List<Task> completedTasks = taskRepository.findByIsCompleted(true);
         //then
@@ -301,5 +303,8 @@ public class TaskServiceFunctionTest {
     private String getTaskIdNotFoundErrorMessage(Long id) {
         return "Task not found with id: " + id;
     }
-    private String getDeleteForbiddenErrorMessage() { return "Active tasks cannot be removed"; }
+
+    private String getDeleteForbiddenErrorMessage() {
+        return "Active tasks cannot be removed";
+    }
 }
